@@ -65,7 +65,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
         // valor = valor.split("").reverse().map((val,index) => index > 0 && index % 3 === 0 ? val + '.' : val).reverse().join("")
         // return `R$ ${valor},00`;
         // }
-            new Intl.NumberFormat("pt-BR", {
+           return new Intl.NumberFormat("pt-BR", {
                 style: "currency",
                 currency: "BRL"
             }).format(Number(transaction.amount))
@@ -74,9 +74,9 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     {
         accessorKey: "actions",
         header: "Ações",
-        cell: () => <div>
-            <Button variant="ghost"><TrashIcon /></Button>
-            <Button variant="ghost"><EditIcon /></Button>
+        cell: () => <div className="space-x-1">
+            <Button variant="ghost" size="icon" className="text-muted-foreground"><TrashIcon /></Button>
+            <Button variant="ghost" size="icon" className="text-muted-foreground"><EditIcon /></Button>
         </div>
     }
 ];
