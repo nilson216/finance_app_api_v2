@@ -37,7 +37,7 @@ import {
   TransactionType,
   TransactionCategory,
   TransactionPaymentMethod,
-} from "../generated/prisma";
+} from "../generated/prisma/client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { upsertTransaction } from "../_actions/upsert-transaction";
